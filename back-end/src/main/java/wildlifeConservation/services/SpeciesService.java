@@ -15,4 +15,6 @@ public interface SpeciesService {
     boolean editSpecies(SpeciesServiceModel speciesServiceModel);
 
     boolean deleteSeciesById(String id);
+
+    SpeciesServiceModel findById(String id);
 }

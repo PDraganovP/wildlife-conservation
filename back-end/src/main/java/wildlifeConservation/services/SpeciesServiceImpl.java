@@ -64,4 +64,13 @@ public class SpeciesServiceImpl implements SpeciesService {
             return false;
         }
     }
+
+    @Override
+    public SpeciesServiceModel findById(String id) {
+        Species species = this.speciesRepository.findById(id).orElse(null);
+        SpeciesServiceModel mappedSpeciesServiceModel = this.modelMapper
+                .map(species, SpeciesServiceModel.class);
+
+        return mappedSpeciesServiceModel;
+    }
 }
